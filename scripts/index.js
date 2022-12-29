@@ -398,14 +398,14 @@ tickEvent.subscribe("main", ({ currentTick, deltaTime, tps }) => { try {
             player.Detect = 0;
         }
         
-        if (config.modules.morepackets[3].enabled) {
-            if(player.blocksBroken > config.modules.morepackets[3].minblocksBroken && player.blocksBroken < config.modules.morepackets[3].maxblocksBroken) {
-                if (player.gamemode !== 1) flag(player, "MorePackets", "3", "Exploit", "BlocksBroken", player.BadPacketsBroken);
+        if (config.modules.morepackets[2].enabled) {
+            if(player.blocksBroken > config.modules.morepackets[2].minblocksBroken && player.blocksBroken < config.modules.morepackets[2].maxblocksBroken) {
+                if (player.gamemode !== 1) flag(player, "MorePackets", "2", "Exploit", "BlocksBroken", player.BadPacketsBroken);
             }
         }
 
-        if (config.modules.morepackets[6].enabled) {
-            if (player.closestArrows >= config.modules.morepackets[6].maxArrows) flag(player, "MorePackets", "6", "Exploit", "Arrows", player.closestArrows);
+        if (config.modules.morepackets[4].enabled) {
+            if (player.closestArrows >= config.modules.morepackets[4].maxArrows) flag(player, "MorePackets", "6", "Exploit", "Arrows", player.closestArrows);
             player.closestArrows = 0;
         }
         
@@ -447,7 +447,7 @@ tickEvent.subscribe("main", ({ currentTick, deltaTime, tps }) => { try {
         if (config.modules.checktype !== "none") for (let i = checkInvMin; i < checkInvMax; i++) if (container.getItem(i)) {
 
             let checkItemTime;
-            if (config.modules.morepackets[5].enabled) checkItemTime = Date.now();
+            if (config.modules.morepackets[3].enabled) checkItemTime = Date.now();
 
             const item = container.getItem(i);
 
@@ -544,16 +544,16 @@ tickEvent.subscribe("main", ({ currentTick, deltaTime, tps }) => { try {
                     flag(player, "BadEnchants", "F", "Exploit", "Enchants", String(flagEnchants), false, false, i);
             }
 
-            if (config.modules.morepackets[5].enabled) {
+            if (config.modules.morepackets[3].enabled) {
                 const time = Date.now() - checkItemTime;
-                if (time > config.modules.morepackets[5].slot) 
+                if (time > config.modules.morepackets[3].slot) 
                     flag(player, "MorePackets", "5", "Exploit", "Slot", `${i},ms=${time}`, false, false, i);
             }
         }
 
-        if (config.modules.morepackets[5].enabled && checkItemTimeInv > config.modules.morepackets[5].inventory) {
+        if (config.modules.morepackets[3].enabled && checkItemTimeInv > config.modules.morepackets[3].inventory) {
             checkItemTimeInv = Date.now() - checkItemTimeInv;
-            if (checkItemTimeInv > config.modules.morepackets[5].inventory) {
+            if (checkItemTimeInv > config.modules.morepackets[3].inventory) {
                 flag(player, "MorePackets", "5", "Exploit", "Slot", `Inventory,ms=${checkItemTimeInv}`, false, false);
                 player.runCommandAsync("clear");
             }
@@ -1084,7 +1084,7 @@ world.events.entityCreate.subscribe(entityCreate => { try {
         });
     }
 
-    if (config.modules.morepackets[6].enabled && entity.typeId === "minecraft:arrow") {
+    if (config.modules.morepackets[4].enabled && entity.typeId === "minecraft:arrow") {
         
         const pl = getClosestPlayer(entity);
         pl.closestArrows++;
