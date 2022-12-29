@@ -4,7 +4,7 @@
 		"name": "Unknown Anti-Grief",
 		"description": "The world's best next-generation anti-grief.\nConfigure it in §o/scripts/data/config.js§r.\n§l§cThis Anti-Grief may affect your game.\n§rUnknown Anti-Grief is developed based on Scythe Antigrief.",
 		"uuid": "7114be38-ac77-4835-a20c-2818b0f10596",
-		"version": [ 1, 11, 29 ],
+		"version": [ 1, 0, 0 ],
 		"min_engine_version": [ 1, 19, 50 ]
 	},
 	"metadata": {
