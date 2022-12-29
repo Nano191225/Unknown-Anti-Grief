@@ -1,0 +1,16 @@
+execute as @e[type=arrow] at @s unless block ~~-0.1~ air run tag @s add kill_arrow_1
+execute as @e[type=arrow] at @s unless block ~~0.1~ air run tag @s add kill_arrow_1
+execute as @e[type=arrow] at @s unless block ~-0.1~~ air run tag @s add kill_arrow_1
+execute as @e[type=arrow] at @s unless block ~0.1~~ air run tag @s add kill_arrow_1
+execute as @e[type=arrow] at @s unless block ~~~-0.1 air run tag @s add kill_arrow_1
+execute as @e[type=arrow] at @s unless block ~~~0.1 air run tag @s add kill_arrow_1
+kill @e[tag=kill_arrow_10]
+tag @e[tag=kill_arrow_9] add kill_arrow_10
+tag @e[tag=kill_arrow_8] add kill_arrow_9
+tag @e[tag=kill_arrow_7] add kill_arrow_8
+tag @e[tag=kill_arrow_6] add kill_arrow_7
+tag @e[tag=kill_arrow_5] add kill_arrow_6
+tag @e[tag=kill_arrow_4] add kill_arrow_5
+tag @e[tag=kill_arrow_3] add kill_arrow_4
+tag @e[tag=kill_arrow_2] add kill_arrow_3
+tag @e[tag=kill_arrow_1] add kill_arrow_2

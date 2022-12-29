@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.onJoin": {
+			"timeline": {
+				"9.0": [
+					"/gamerule sendcommandfeedback false",
+					"/gamerule commandblockoutput false",
+					"/scoreboard objectives add invmovevl dummy",
+					"/scoreboard objectives add attacks dummy",
+					"/scoreboard objectives add attack_timer dummy",
+					"/scoreboard objectives add right dummy",
+					"/scoreboard objectives add ground dummy",
+					"/scoreboard objectives add cbevl dummy",
+					"/scoreboard objectives add xPos dummy",
+					"/scoreboard objectives add yPos dummy",
+					"/scoreboard objectives add zPos dummy",
+					"/scoreboard objectives add last_attack dummy",
+					"/scoreboard objectives add packets dummy",
+					"/scoreboard objectives add \"illegalitems/Avl\" dummy",
+					"/scoreboard objectives add gamemode dummy",
+					"/scoreboard objectives add gamemodeSV dummy",
+					"/scoreboard objectives add websocket dummy",
+					"/scoreboard objectives add privatechat dummy",
+					"/event entity @s[tag=vanish] vanish",
+					"/ability @s[tag=flying] mayfly true"
+				]
+			},
+			"animation_length": 9.9,
+			"loop": false
+		}
+	}
+}

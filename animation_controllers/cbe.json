@@ -1,0 +1,167 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cbe": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/scoreboard players add @p cbevl 1",
+						"/execute as @p at @s run tellraw @a[tag=notify] {\"rawtext\":[{\"text\":\"§r§4[§cUAG§4]§r \"},{\"selector\":\"@s\"},{\"text\":\" §chas failed §7(Exploit) §4CommandBlockExploit/C §7(command_block_minecart)§4 VL= \"},{\"score\":{\"name\":\"@s\",\"objective\":\"cbevl\"}}]}",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace bee_nest -1",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace beehive -1",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace dispenser -1",
+						"/kill @e[type=command_block_minecart]",
+						"/kill @s"
+					]
+				}
+			}
+		},
+		"controller.animation.npc": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/execute as @s[tag=!uag:bypassNPC] at @s run scoreboard players add @p cbevl 1",
+						"/execute as @s[tag=!uag:bypassNPC] at @s as @p at @s run tellraw @a[tag=notify] {\"rawtext\":[{\"text\":\"§r§4[§cUAG§4]§r \"},{\"selector\":\"@s\"},{\"text\":\" §chas failed §7(Exploit) §4CommandBlockExploit/D §7(npc)§4 VL= \"},{\"score\":{\"name\":\"@s\",\"objective\":\"cbevl\"}}]}",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace bee_nest -1",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace beehive -1",
+						"/fill ~10 ~10 ~10 ~-10 ~-10 ~-10 air 0 replace dispenser -1",
+						"/kill @e[tag=!uag:bypassNPC,type=npc]",
+						"/kill @s[tag=!uag:bypassNPC]",
+						"/event entity @s[tag=!uag:bypassNPC] uag:despawn"
+					]
+				}
+			}
+		},
+		"controller.animation.cbeitems": {
+			"states": {
+				"cbeitems": {
+					"transitions": [
+						{
+							"axolotl_bucket": "query.get_equipped_item_name=='axolotl_bucket'||query.get_equipped_item_name('off_hand')=='axolotl_bucket'"
+						},
+						{
+							"cod_bucket": "query.get_equipped_item_name=='cod_bucket'||query.get_equipped_item_name('off_hand')=='cod_bucket'"
+						},
+						{
+							"powder_snow_bucket": "query.get_equipped_item_name=='powder_snow_bucket'||query.get_equipped_item_name('off_hand')=='powder_snow_bucket'"
+						},
+						{
+							"pufferfish_bucket": "query.get_equipped_item_name=='pufferfish_bucket'||query.get_equipped_item_name('off_hand')=='pufferfish_bucket'"
+						},
+						{
+							"salmon_bucket": "query.get_equipped_item_name=='salmon_bucket'||query.get_equipped_item_name('off_hand')=='salmon_bucket'"
+						},
+						{
+							"tropical_fish_bucket": "query.get_equipped_item_name=='tropical_fish_bucket'||query.get_equipped_item_name('off_hand')=='tropical_fish_bucket'"
+						},
+						{
+							"tadpole_bucket": "query.get_equipped_item_name=='tadpole_bucket'||query.get_equipped_item_name('off_hand')=='tadpole_bucket'"
+						},
+						{
+							"beehive": "query.get_equipped_item_name=='beehive'||query.get_equipped_item_name('off_hand')=='beehive'"
+						},
+						{
+							"bee_nest": "query.get_equipped_item_name=='bee_nest'||query.get_equipped_item_name('off_hand')=='bee_nest'"
+						}
+					]
+				},
+				"axolotl_bucket": {
+					"on_entry": [
+						"/clear @s axolotl_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='axolotl_bucket'||query.get_equipped_item_name('off_hand')!='axolotl_bucket'"
+						}
+					]
+				},
+				"cod_bucket": {
+					"on_entry": [
+						"/clear @s cod_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='cod_bucket'||query.get_equipped_item_name('off_hand')!='cod_bucket'"
+						}
+					]
+				},
+				"powder_snow_bucket": {
+					"on_entry": [
+						"/clear @s powder_snow_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='powder_snow_bucket'||query.get_equipped_item_name('off_hand')!='powder_snow_bucket'"
+						}
+					]
+				},
+				"pufferfish_bucket": {
+					"on_entry": [
+						"/clear @s pufferfish_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='pufferfish_bucket'||query.get_equipped_item_name('off_hand')!='pufferfish_bucket'"
+						}
+					]
+				},
+				"salmon_bucket": {
+					"on_entry": [
+						"/clear @s salmon_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='salmon_bucket'||query.get_equipped_item_name('off_hand')!='salmon_bucket'"
+						}
+					]
+				},
+				"tropical_fish_bucket": {
+					"on_entry": [
+						"/clear @s tropical_fish_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='tropical_fish_bucket'||query.get_equipped_item_name('off_hand')!='tropical_fish_bucket'"
+						}
+					]
+				},
+				"tadpole_bucket": {
+					"on_entry": [
+						"/clear @s tadpole_bucket"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='tadpole_bucket'||query.get_equipped_item_name('off_hand')!='tadpole_bucket'"
+						}
+					]
+				},
+				"beehive": {
+					"on_entry": [
+						"/clear @s beehive",
+						"/scoreboard players add @s[tag=!uag:systemPermission] cbevl 1",
+						"/execute as @s[tag=!uag:systemPermission] at @s run tellraw @a[tag=notify] {\"rawtext\":[{\"text\":\"§r§4[§cUAG§4]§r \"},{\"selector\":\"@s\"},{\"text\":\" §chas failed §7(Exploit) §4Command Block Exploit/A §7(item=beehive)§4 VL= \"},{\"score\":{\"name\":\"@s\",\"objective\":\"cbevl\"}}]}"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='beehive'||query.get_equipped_item_name('off_hand')!='beehive'"
+						}
+					]
+				},
+				"bee_nest": {
+					"on_entry": [
+						"/clear @s bee_nest",
+						"/scoreboard players add @s[tag=!uag:systemPermission] cbevl 1",
+						"/execute as @s[tag=!uag:systemPermission] at @s run tellraw @a[tag=notify] {\"rawtext\":[{\"text\":\"§r§4[§cUAG§4]§r \"},{\"selector\":\"@s\"},{\"text\":\" §chas failed §7(Exploit) §4Command Block Exploit/A §7(item=bee_nest)§4 VL= \"},{\"score\":{\"name\":\"@s\",\"objective\":\"cbevl\"}}]}"
+					],
+					"transitions": [
+						{
+							"cbeitems": "query.get_equipped_item_name!='bee_nest'||query.get_equipped_item_name('off_hand')!='bee_nest'"
+						}
+					]
+				}
+			}
+		}
+	}
+}

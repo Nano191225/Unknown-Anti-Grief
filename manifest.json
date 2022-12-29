@@ -1,0 +1,38 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Unknown Anti-Grief",
+		"description": "The world's best next-generation anti-grief.\nConfigure it in §o/scripts/data/config.js§r.\n§l§cThis Anti-Grief may affect your game.\n§rUnknown Anti-Grief is developed based on Scythe Antigrief.",
+		"uuid": "7114be38-ac77-4835-a20c-2818b0f10596",
+		"version": [ 1, 11, 29 ],
+		"min_engine_version": [ 1, 19, 50 ]
+	},
+	"metadata": {
+		"authors": ["Nano"],
+		"url": "https://github.com/191225/Unknown-Anti-Grief"
+	},
+	"modules": [{
+			"type": "data",
+			"uuid": "684988a3-1223-4fc2-ba19-328beb611dc5",
+			"version": [ 1, 0, 0 ]
+		},
+		{
+			"description": "Unknown Anti-Grief is based on Scythe-Anti-Grief.",
+			"language": "javascript",
+			"type": "script",
+			"uuid": "879db2af-e417-4391-9e93-4672e20acf6b",
+			"version": [ 1, 0, 0 ],
+			"entry": "scripts/index.js"
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.1.0-beta"
+		},
+        {
+			"module_name": "@minecraft/server-ui",
+			"version": "1.0.0-beta"
+		}
+	]
+}

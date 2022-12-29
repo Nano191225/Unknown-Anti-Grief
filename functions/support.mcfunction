@@ -1,0 +1,1 @@
+tellraw @s {"rawtext":[{"text":"§4[§cUAG§4]§r Support for Unknown Anti-Grief is available on the following servers. §ohttps://discord.gg/QF3n85dr4P"}]}
